@@ -41,6 +41,8 @@ body {
   font-size: 18px;
   padding: 8px;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
  
 .app-bar .app-bar__brand {
@@ -59,26 +61,34 @@ body {
   position: absolute;
   top: 50px;
   left: -180px;
-  width: 150px;
   transition: all 0.3s;
-  padding: 8px;
   background-color: white;
   overflow: hidden;
+  
+  padding-top: 1.5em;
 }
  
 .app-bar .app-bar__navigation.open {
   left: 0;
+}
+
+.app-bar .app-bar__navigation.open ul li {
+  left: 0;
+  list-style-type: none;
+  min-height: 44px;
+  min-width: 150px;
+  margin-left: 1em;
 }
  
 .app-bar .app-bar__navigation ul li a {
   display: inline-block;
   text-decoration: none;
   color: black;
-  padding: 8px;
   margin-bottom: 5px;
   width: 100%;
+  min-width: 44px;
+  min-height: 44px;
 }
- 
 /*
   Main Content
 */
@@ -192,20 +202,6 @@ main {
 /*
   Footer
 */
- 
-footer {
-  padding: 16px;
-}
- 
-footer p {
-  text-align: center;
-  color: #aaaaaa;
-}
- 
-footer p a {
-  color: #db0000;
-  text-decoration: none;
-}
 
 /*
 skip content
@@ -263,46 +259,7 @@ skip content
  * Top level navigation
  */
 
-.nav {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: #D3E4CD;
-}
 
-.nav__list {
-  width: 100%;
-  padding: 0;
-  padding-bottom: 20px;
-  margin: 0;
-  text-decoration: none;
-}
-
-.nav__item {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 24%;
-  text-align: center;
-  line-height: 24px;
-  text-transform: uppercase;
-}
-
-.nav a {
-  display: inline-block;
-  padding: 1.3em;
-  color: #616161;
-  text-decoration: none;
-  min-width: 44px;
-  min-height: 44px;
-  background-color: transparent;
-  
-}
-
-.nav a:hover {
-  text-decoration: underline;
-  color: #395144;
-}
 
 
 /*
@@ -312,6 +269,7 @@ skip content
 .hero {
   display: flex;
   align-items: center;
+  width: 100%;
   min-height: 430px;
   text-align: center;
   background-position: center;
@@ -368,7 +326,7 @@ skip content
 
 footer {
   background-color: #2c3e50;
-  padding: 2em;
+  padding: 1em;
   width: 100%;
   text-align: center;
   color: white;
@@ -409,7 +367,7 @@ footer {
   display: grid;
   place-items: center;
   gap: 2rem;
-  max-width: 80%;
+  max-width: 100%;
   margin-inline: auto;
   padding-block-end: 10rem;
 
@@ -420,9 +378,15 @@ footer {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: hidden;
+  
+}
+
+.card p {
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+
 }
 
 .restaurant__detail{
@@ -447,10 +411,13 @@ footer {
 }
 .card__header__image {
   border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  max-height: 180px;
 }
 
 .card__body {
   padding: 1rem;
+  -webkit-line-clamp: 4; 
 }
 .card__body__rating {
   font-weight: bold;
@@ -465,6 +432,9 @@ footer {
 
 .card__body__description {
   font-size: 0.7rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 .detail__body {
   padding-inline: 2em;
@@ -484,6 +454,22 @@ footer {
 
 .card__body__name a{
  text-decoration: none;
+}
+
+.detail__reviews {
+  margin-block-end: 2em;
+}
+.detail__reviews--card {
+  background-color: #e3d0e3;
+  border-radius: 0.5em;
+  border: 1px solid gray;
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  margin-block-end: 1em;
+}
+.detail__reviews--card__date {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 
