@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
  
 body {
@@ -94,7 +95,6 @@ body {
 */
  
 main {
-  padding: 32px;
   flex: 1;
 }
  
@@ -326,7 +326,7 @@ skip content
 
 footer {
   background-color: #2c3e50;
-  padding: 1em;
+  padding: 1em 0;
   width: 100%;
   text-align: center;
   color: white;
@@ -370,7 +370,7 @@ footer {
   max-width: 100%;
   margin-inline: auto;
   padding-block-end: 10rem;
-
+  padding: 32px;
 }
 
 .restaurant__item {
@@ -425,10 +425,16 @@ footer {
 }
 .card__body__name {
   font-weight: bold;
-  font-size: 1.2rem;
   margin-block-end: 0.5em;
   color: purple;
+
 }
+.card__body__name a{
+  text-decoration: none;
+  min-width: 44px;
+  min-height: 44px;
+  display: block;
+ }
 
 .card__body__description {
   font-size: 0.7rem;
@@ -452,9 +458,7 @@ footer {
 
 
 
-.card__body__name a{
- text-decoration: none;
-}
+
 
 .detail__reviews {
   margin-block-end: 2em;
